@@ -8,7 +8,7 @@ import com.parcial.demo.models.Biblioteca;
 
 @Repository
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-public interface BibliotecaRepository extends JpaRepository<Biblioteca, Long>{
+public interface BibliotecaRepository extends JpaRepository<Biblioteca, String>{
 
     @Query(value = "SELECT * FROM biblioteca WHERE name = ?1", nativeQuery = true)
     Optional<Biblioteca> findBibliotecaByName(String name);

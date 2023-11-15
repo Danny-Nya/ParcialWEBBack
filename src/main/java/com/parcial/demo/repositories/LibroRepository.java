@@ -8,7 +8,7 @@ import com.parcial.demo.models.Libro;
 
 @Repository
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-public interface LibroRepository extends JpaRepository<Libro, Long>{
+public interface LibroRepository extends JpaRepository<Libro, String>{
 
     @Query(value = "SELECT * FROM libro WHERE name = ?1", nativeQuery = true)
     Optional<Libro> findLibroByName(String name);
